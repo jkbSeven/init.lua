@@ -1,22 +1,13 @@
 return {
     {
         "nvim-lua/plenary.nvim",
-        name = "plenary"
     },
 
-    {
-        'nvim-telescope/telescope.nvim',
-        dependencies = {
-            "plenary",
-        }
-    },
 
 	{
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
     },
-
-	"nvim-treesitter/nvim-treesitter-context",
 
 	"theprimeagen/harpoon",
 
