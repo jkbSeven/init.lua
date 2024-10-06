@@ -11,7 +11,12 @@ return {
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
             vim.keymap.set('n', '<C-l>', builtin.git_files, {})
             vim.keymap.set('n', '<leader>fs', function()
-                builtin.grep_string({ search = vim.fn.input("Grep > ") })
+                regex = vim.fn.input("Grep > ")
+                if regex ~= "" then
+                    builtin.grep_string({ search = regex })
+                else
+                    builtin.grep_string()
+                end
             end)
             vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         end
